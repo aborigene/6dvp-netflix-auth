@@ -17,5 +17,5 @@ Microserviço de Autenticação, trabalho conclusão de curso.
 <p>DB_USERNAME =<i>Usuário</i></p>
 <p>DB_PASSWORD =<i>Senha</i></p>
 
-### Dump Mysql
+## Dump Mysql
 <p>Restaurar o arquivo de backup <i>auth-db.sql</i> localizado na pasta <i>/data</i></p>
