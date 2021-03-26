@@ -82,6 +82,14 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- OpenAPI -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+
+
 		<!-- Spring Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
