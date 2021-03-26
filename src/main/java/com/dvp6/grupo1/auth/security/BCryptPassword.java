@@ -16,7 +16,6 @@ public class BCryptPassword extends JsonDeserializer<String> {
         ObjectCodec oc = jsonParser.getCodec();
         JsonNode node = oc.readTree(jsonParser);
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        String encodedPassword = encoder.encode(node.asText());
-        return encodedPassword;
+        return encoder.encode(node.asText());
     }
 }

@@ -1,6 +1,5 @@
 package com.dvp6.grupo1.auth.security;
 
-import java.sql.SQLException;
 import java.util.Date;
 
 import com.auth0.jwt.JWT;
@@ -13,7 +12,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 public class JwtGenerator {
 
-    public static String getJWT() throws SQLException, JWTCreationException {
+    private JwtGenerator(){
+    }
+
+    public static String getJWT() throws JWTCreationException {
 
         Date date = new Date();
         String role = null;

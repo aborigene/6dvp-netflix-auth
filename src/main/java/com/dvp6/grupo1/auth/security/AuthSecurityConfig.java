@@ -17,7 +17,7 @@ public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-    @Autowired
+    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().passwordEncoder(new BCryptPasswordEncoder()).dataSource(dataSource)
                 .usersByUsernameQuery("SELECT username, password, enabled from `auth-db`.auth where username =?")
