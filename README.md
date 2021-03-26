@@ -5,6 +5,7 @@ Microserviço de Autenticação, trabalho conclusão de curso.
 
 ## /getToken
 <p>Retorna um token JWT com os Clains do usuário logado.</p>
+<p>Nível de permissão: permitAll
 <p><i>Exemplo do payload</i></p>
 <p>{</p>
 <p>  "role": "admin",</p>
@@ -18,7 +19,8 @@ Microserviço de Autenticação, trabalho conclusão de curso.
   
 ## /addUser
 <p>Adiciona usuário, necessário passar um <i>json</i> no <i>body</i>
- <p><i>Exemplo do json</i></p>
+<p>Nível de permissão: ROLE_ADMIN
+<p><i>Exemplo do json</i></p>
 <p>{</p>
 <p>  "username": "teste",</p>
 <p>  "password": "teste",</p>
