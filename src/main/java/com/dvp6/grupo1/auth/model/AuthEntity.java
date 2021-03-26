@@ -7,32 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.dvp6.grupo1.auth.security.BCryptPassword;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @Entity
 @Table(name = "auth")
 public class AuthEntity {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-@Column(name ="username")
-private String username;
+    @Column(name = "username")
+    private String username;
 
-@Column(name ="password")
-private String password;
+    @Column(name = "password")
+    @JsonDeserialize(using = BCryptPassword.class)
+    private String password;
 
-@Column(name ="role")
-private String role;
+    @Column(name = "role")
+    private String role;
 
-@Column(name ="enabled")
-private Boolean enabled;
-
+    @Column(name = "enabled")
+    private Boolean enabled;
 
     public AuthEntity() {
     }
 
-    public AuthEntity(long id, String username, String password, String role, Boolean enabled) {
-        this.id = id;
+    public AuthEntity(String username, String password, String role, Boolean enabled) {
         this.username = username;
         this.password = password;
         this.role = role;
@@ -69,10 +71,6 @@ private Boolean enabled;
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    public Boolean isEnabled() {
-        return this.enabled;
     }
 
     public Boolean getEnabled() {

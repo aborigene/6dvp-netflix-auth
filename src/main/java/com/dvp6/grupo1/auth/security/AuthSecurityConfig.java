@@ -27,6 +27,9 @@ public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().authenticated().and().httpBasic();
+        http.csrf().disable().httpBasic();
+        http.authorizeRequests().antMatchers("/getToken").permitAll().antMatchers("/getUsers").permitAll()
+                .antMatchers("/addUser").hasAuthority("ADMIN").anyRequest().authenticated();
+
     }
 }
