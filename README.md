@@ -36,3 +36,7 @@ Microserviço de Autenticação, trabalho conclusão de curso.
 
 ## Dump Mysql
 <p>Restaurar o arquivo de backup <i>auth-db.sql</i> localizado na pasta <i>/data</i></p>
+
+## Execução Docker
+<p>docker build -t 6dvp-netflix/auth:v1.0.0 .</p>
+<p>docker run --name 6dvp-netflix-auth -d -p 8090:8090 -e DB_SERVER=172.28.188.49 -e DB_PORT=3306 -e DB_USERNAME=root -e DB_PASSWORD=123456789 6dvp-netflix/auth:v1.0.0</p>
