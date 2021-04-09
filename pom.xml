@@ -89,7 +89,6 @@
 			<version>1.5.6</version>
 		</dependency>
 
-
 		<!-- Spring Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
