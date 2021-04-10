@@ -2,7 +2,6 @@ package com.dvp6.grupo1.auth.controller;
 
 import java.sql.SQLException;
 
-import com.auth0.jwt.exceptions.JWTCreationException;
 import com.dvp6.grupo1.auth.model.AuthEntity;
 import com.dvp6.grupo1.auth.model.AuthRepository;
 import com.dvp6.grupo1.auth.security.JwtGenerator;
@@ -19,19 +18,19 @@ public class AuthController {
   @Autowired
   private AuthRepository authRepository;
 
-  @GetMapping("/getToken")
-  public String getToken() throws JWTCreationException, SQLException {
-    return JwtGenerator.getJWT();
+  @GetMapping("/login")
+  public String login() throws SQLException {
+    return JwtGenerator.getJwtToken();
   }
 
   @PostMapping("/addUser")
   public void addUser(@RequestBody AuthEntity authEntity) {
-      authRepository.save(authEntity);
+    authRepository.save(authEntity);
   }
 
   @GetMapping("/getUsers")
   public Iterable<AuthEntity> getUsers() {
-      return authRepository.findAll();
+    return authRepository.findAll();
   }
 
 }
