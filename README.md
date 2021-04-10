@@ -3,6 +3,9 @@ Microserviço de Autenticação, trabalho conclusão de curso.
 
 <p>Porta de execução: <b>8090</b></p>
 
+## /swagger-ui
+<p>Documentação detalhada das API</p>
+
 ## /login
 <p>Retorna um token JWT com os Clains do usuário logado.</p>
 <p>Nível de permissão: permitAll
