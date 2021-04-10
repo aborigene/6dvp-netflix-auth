@@ -83,7 +83,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- OpenAPI -->
+        <!-- Swagger OpenAPI -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
