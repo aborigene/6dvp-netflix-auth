@@ -1,3 +1,9 @@
+/*
+  Autor: Guilherme Rubio
+  e-mail: guilherme.rubio@outlook.com.br
+  Data: 13/04/2021
+*/
+
 package com.dvp6.grupo1.auth.security;
 
 import javax.sql.DataSource;
@@ -10,13 +16,23 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
+/*
+  Classe responsável pela configuração do Spring Security.
+*/
 @Configuration
 @EnableWebSecurity
 public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    /*
+      Instanciando o data source para consultar o usuário e senha do banco de dados.
+    */
     @Autowired
     private DataSource dataSource;
 
+    /*
+      Método responsável por validar o usuário e senha.
+    */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().passwordEncoder(new BCryptPasswordEncoder()).dataSource(dataSource)
@@ -25,6 +41,9 @@ public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
+    /*
+      Método responsável filtar as permissões para as rotas.
+    */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().httpBasic();

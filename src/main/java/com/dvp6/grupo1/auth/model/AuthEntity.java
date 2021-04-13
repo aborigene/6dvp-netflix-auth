@@ -1,3 +1,9 @@
+/*
+  Autor: Guilherme Rubio
+  e-mail: guilherme.rubio@outlook.com.br
+  Data: 13/04/2021
+*/
+
 package com.dvp6.grupo1.auth.model;
 
 import javax.persistence.Column;
@@ -10,12 +16,19 @@ import javax.persistence.Table;
 import com.dvp6.grupo1.auth.security.BCryptPassword;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+/*
+  Classe responsável por criar uma entidade vinculada com o banco de dados.
+*/
 @Entity
 @Table(name = "auth")
 public class AuthEntity {
 
+    /*
+      Vinculando a variaveis as colunas do banco de dados.
+    */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "username")
@@ -31,6 +44,9 @@ public class AuthEntity {
     @Column(name = "enabled")
     private Boolean enabled;
 
+    /*
+      Método construtor da classe.
+    */
     public AuthEntity() {
     }
 
@@ -41,6 +57,9 @@ public class AuthEntity {
         this.enabled = enabled;
     }
 
+    /*
+      Métodos Getters e Setters.
+    */
     public long getId() {
         return this.id;
     }

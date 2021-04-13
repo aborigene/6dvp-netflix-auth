@@ -1,3 +1,9 @@
+/*
+  Autor: Guilherme Rubio
+  e-mail: guilherme.rubio@outlook.com.br
+  Data: 13/04/2021
+*/
+
 package com.dvp6.grupo1.auth.security;
 
 import io.jsonwebtoken.Jwts;
@@ -13,11 +19,20 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+  Classe responsável por expor as APIs.
+*/
 public class JwtGenerator {
 
+    /*
+      Método construtor da classe.
+    */
     private JwtGenerator() {
     }
 
+    /*
+      Método que recebe os dados do usuário e retorna um token jwt.
+    */
     public static String getJwtToken() {
 
         String secretKey = "mySecretKey";
