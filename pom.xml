@@ -56,13 +56,6 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- Swagger OpenAPI -->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.5.6</version>
-		</dependency>
-
 		<!-- Google Gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
