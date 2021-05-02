@@ -21,10 +21,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 */
 public class BCryptPassword extends JsonDeserializer<String> {
 
-    public String deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-        ObjectCodec oc = jsonParser.getCodec();
-        JsonNode node = oc.readTree(jsonParser);
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        return encoder.encode(node.asText());
-    }
+  public String deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
+    ObjectCodec oc = jsonParser.getCodec();
+    JsonNode node = oc.readTree(jsonParser);
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    return encoder.encode(node.asText());
+  }
+
+  public static String encrypt(String password) {
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    return encoder.encode(password);
+  }
 }

@@ -6,8 +6,11 @@
 
 package com.dvp6.grupo1.auth;
 
+import com.dvp6.grupo1.auth.model.AuthEntity;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 /*
@@ -19,6 +22,11 @@ public class AuthApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AuthApplication.class, args);		
+	}
+
+  @Bean
+	public AuthEntity authEntity() {
+		return new AuthEntity();
 	}
 
 }

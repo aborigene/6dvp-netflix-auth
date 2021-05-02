@@ -78,6 +78,13 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- Swagger -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.5.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

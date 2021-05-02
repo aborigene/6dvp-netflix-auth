@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,6 +32,14 @@ public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
   private DataSource dataSource;
 
   /*
+   * Deixa o Swagger publico.
+   */
+  @Override
+  public void configure(WebSecurity http) throws Exception {
+    http.ignoring().antMatchers("/", "/swagger*/**", "/v3/api-docs*/**");
+  }
+
+  /*
    * Método responsável por validar o usuário e senha.
    */
   @Override
@@ -47,8 +56,7 @@ public class AuthSecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.csrf().disable().httpBasic();
-    http.authorizeRequests().antMatchers("/getUsers").permitAll()
-        .antMatchers("/addUser").hasAuthority("ROLE_ADMIN").anyRequest().authenticated();
+    http.authorizeRequests().antMatchers("/login").permitAll();
 
   }
 }

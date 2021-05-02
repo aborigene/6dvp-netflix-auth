@@ -6,8 +6,6 @@
 
 package com.dvp6.grupo1.auth.controller;
 
-import com.dvp6.grupo1.auth.model.AuthEntity;
-import com.dvp6.grupo1.auth.model.AuthRepository;
 import com.dvp6.grupo1.auth.security.JwtGenerator;
 
 import java.sql.SQLException;
@@ -39,5 +37,4 @@ public class AuthController {
   public String login() throws SQLException {
     return JwtGenerator.getJwtToken();
   }
-
 }
