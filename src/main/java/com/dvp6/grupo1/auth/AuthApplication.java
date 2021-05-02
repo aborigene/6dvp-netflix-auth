@@ -21,10 +21,10 @@ import org.springframework.context.annotation.ComponentScan;
 public class AuthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AuthApplication.class, args);		
+		SpringApplication.run(AuthApplication.class, args);
 	}
 
-  @Bean
+	@Bean
 	public AuthEntity authEntity() {
 		return new AuthEntity();
 	}

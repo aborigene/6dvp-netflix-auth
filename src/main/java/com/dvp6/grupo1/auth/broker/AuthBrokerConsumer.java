@@ -45,6 +45,5 @@ public class AuthBrokerConsumer {
     } catch (Exception e) {
       System.out.println("erro: " + e);
     }
-
   }
 }
