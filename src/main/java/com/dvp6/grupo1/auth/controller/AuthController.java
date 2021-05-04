@@ -26,7 +26,7 @@ public class AuthController {
    */
   @GetMapping("/")
   public ResponseEntity<String> home() {
-    return new ResponseEntity<>("Ok!", HttpStatus.OK);
+    return new ResponseEntity<>(HttpStatus.OK);
   }
 
   /*
